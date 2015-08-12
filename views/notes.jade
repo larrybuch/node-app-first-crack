@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+
+  p this is the #{title} page duudr
+  form#formAddUser(name="addpost",method="post",action="/addnote")
+    input#inputNote(type="text", placeholder="note stuff here", name="note")
+    button#btnSubmit(type="submit") submit
+
+  ul
+    each item, i in noteslist
+      li
+        =item.note
